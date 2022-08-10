@@ -1,5 +1,7 @@
 package com.example.flyaway;
 
+import com.example.flyaway.classes.PasswordHash;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -17,7 +19,16 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        String username = request.getParameter("username");
        String password = request.getParameter("password");
-
-       response.sendRedirect("change-password.jsp");
+        PrintWriter pw = response.getWriter();
+        pw.println("Username: " + username);
+        pw.println("Password: " + password);
+        try {
+            PasswordHash ph = new PasswordHash();
+            String hashedPassword = ph.hashPassword(password);
+            pw.println("HashedPassword: " + hashedPassword);
+        } catch (Exception e) {
+            pw.println(e);
+        }
+//       response.sendRedirect("change-password.jsp");
     }
 }
