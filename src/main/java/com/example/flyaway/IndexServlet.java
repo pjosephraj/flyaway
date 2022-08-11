@@ -1,5 +1,6 @@
 package com.example.flyaway;
 
+import com.example.flyaway.classes.DbConnection;
 import com.example.flyaway.dbutils.BookingTable;
 import com.example.flyaway.dbutils.FlightDetailsTable;
 import com.example.flyaway.dbutils.UserTable;
@@ -15,22 +16,16 @@ import java.sql.Statement;
 
 @WebServlet(name = "IndexServlet", value = "/fa-db-init")
 public class IndexServlet extends HttpServlet {
-
-    String jdbcURL = "jdbc:mysql://localhost:3306/jsp_demo_auth";
-    String username = "root";
-    String password = "SS2022ll";
-
     String userTableName = "fa_user";
     String flightTableName = "fa_flight";
     String bookingTableName = "fa_booking";
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
-        out.println("Login Servlet");
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(jdbcURL, username, password);
-
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//            Connection conn = DriverManager.getConnection(jdbcURL, username, password);
+            Connection conn = new DbConnection().connect();
 //             User Table
             UserTable ut = new UserTable();
             ut.createTable(conn, userTableName);

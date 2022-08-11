@@ -22,7 +22,7 @@
         <main class="box-wrapper">
             <div class="box-container">
                 <div class="box-title">
-                    Admin Login
+                    Login
                 </div>
                 <form action="login" method="post">
                     <div class="form-control">

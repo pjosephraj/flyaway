@@ -22,10 +22,10 @@
     <main class="jumbo-wrapper">
         <div class="jumbo-container">
             <a href="search-flights.jsp">
-                <button class="jumbo-btn">Book Flights</button>
+                <button class="jumbo-btn">Book Flight</button>
             </a>
             <a href="login.jsp">
-                <button class="jumbo-btn">Admin Login</button>
+                <button class="jumbo-btn">App Login</button>
             </a>
         </div>
     </main>

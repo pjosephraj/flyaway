@@ -26,6 +26,10 @@ public class LoginServlet extends HttpServlet {
             PasswordHash ph = new PasswordHash();
             String hashedPassword = ph.hashPassword(password);
             pw.println("HashedPassword: " + hashedPassword);
+            pw.println("Username: " + username);
+
+            request.setAttribute("username", username);
+            request.getRequestDispatcher("change-password.jsp").forward(request, response);
         } catch (Exception e) {
             pw.println(e);
         }
