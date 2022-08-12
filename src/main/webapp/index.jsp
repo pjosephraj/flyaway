@@ -12,12 +12,7 @@
 </head>
 
 <body>
-<header>
-    <a class="logo" href="index.jsp">
-        <img src="assets/images/logo.svg" alt="FlyAway Logo">
-        <span>FlyAway</span>
-    </a>
-</header>
+<%@include file="parts/header.jsp"%>
 <div class="container">
     <main class="jumbo-wrapper">
         <div class="jumbo-container">

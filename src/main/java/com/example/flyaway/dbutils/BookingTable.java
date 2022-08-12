@@ -16,7 +16,7 @@ public class BookingTable {
                     "userId int, " +
                     "flightId int, " +
                     "flightDate date, " +
-                    "seats int, " +
+                    "passengers int, " +
                     "amount decimal, " +
                     "constraint fk_user foreign key (userId) references " + userTableName + "(id)," +
                     "constraint fk_flight foreign key (flightId) references " + flightTableName + "(id)" +

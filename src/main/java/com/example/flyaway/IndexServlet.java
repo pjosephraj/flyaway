@@ -44,6 +44,7 @@ public class IndexServlet extends HttpServlet {
         } catch (Exception e) {
             out.println("Error: ");
             out.println(e);
+            out.close();
         }
     }
 
