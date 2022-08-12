@@ -1,6 +1,7 @@
 package com.example.flyaway;
 
 import com.example.flyaway.classes.DbConnection;
+import com.example.flyaway.classes.TableName;
 import com.example.flyaway.dbutils.BookingTable;
 import com.example.flyaway.dbutils.FlightDetailsTable;
 import com.example.flyaway.dbutils.UserTable;
@@ -11,36 +12,35 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
 
 @WebServlet(name = "IndexServlet", value = "/fa-db-init")
 public class IndexServlet extends HttpServlet {
-    String userTableName = "fa_user";
-    String flightTableName = "fa_flight";
-    String bookingTableName = "fa_booking";
+    String userTableName = new TableName().user;
+    String flightTableName = new TableName().flight;
+    String bookingTableName = new TableName().booking;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         try {
-//            Class.forName("com.mysql.cj.jdbc.Driver");
-//            Connection conn = DriverManager.getConnection(jdbcURL, username, password);
             Connection conn = new DbConnection().connect();
-//             User Table
+
+//          User Table
             UserTable ut = new UserTable();
             ut.createTable(conn, userTableName);
 
-//            Flights Details Table
+//          Flights Details Table
             FlightDetailsTable fdt = new FlightDetailsTable();
             fdt.createTable(conn, flightTableName);
 
-//            Booking Table
+//          Booking Table
             BookingTable bt = new BookingTable();
             bt.userTableName = userTableName;
             bt.flightTableName = flightTableName;
             bt.createTable(conn, bookingTableName);
 
             out.println("Database Success");
+
+            conn.close();
         } catch (Exception e) {
             out.println("Error: ");
             out.println(e);

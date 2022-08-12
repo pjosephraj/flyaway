@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     errorMsg = 'Error!!'
     if(paramsObj[errMsgKey] === 'cp') {
       errorMsg = 'Please login to change the password!';
+    } else {
+      errorMsg = 'Page is restricted to logged In user only!';
     }
   }
   if(errorMsg) {

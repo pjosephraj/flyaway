@@ -248,3 +248,7 @@ header {
 .w-100 {
     width: 100% !important;
 }
+
+.ta-c {
+    text-align: center !important;
+}

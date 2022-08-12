@@ -1,12 +1,21 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.example.flyaway.classes.SearchFlights" %>
+<%@ page import="com.example.flyaway.classes.FlightList" %>
+<%@ page import="com.example.flyaway.classes.Flight" %>
+<%@ page import="com.example.flyaway.classes.AdminUsername" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
-
+<%
+    ArrayList<Flight> fldata = new FlightList().getFlights(new AdminUsername().value);
+    ArrayList<String> sourceCities = new SearchFlights().getSourceCities(fldata);
+    ArrayList<String> destinationCities = new SearchFlights().getDestinationCities(fldata);
+%>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlyAway Booking</title>
+    <title>FlyAway | Flight Search</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -32,21 +41,17 @@
                     <div class="form-control">
                         <label class="required" for="source">Source</label>
                         <select name="source" id="source">
-                            <option value="Mumbai">Mumbai</option>
-                            <option value="Bengaluru">Bengaluru</option>
-                            <option value="Delhi">Delhi</option>
-                            <option value="New York">New York</option>
-                            <option value="Paris">Paris</option>
+                            <% for(String itm : sourceCities) { %>
+                            <option value="<%= itm %>"><%= itm %></option>
+                            <% } %>
                         </select>
                     </div>
                     <div class="form-control">
                         <label class="required" for="destination">Destination</label>
                         <select name="destination" id="destination">
-                            <option value="Mumbai">Mumbai</option>
-                            <option value="Bengaluru">Bengaluru</option>
-                            <option value="Delhi">Delhi</option>
-                            <option value="New York">New York</option>
-                            <option value="Paris">Paris</option>
+                            <% for(String itm : destinationCities) { %>
+                            <option value="<%= itm %>"><%= itm %></option>
+                            <% } %>
                         </select>
                     </div>
                     <div class="form-control">
@@ -60,6 +65,9 @@
                             <option value="6">6</option>
                         </select>
                     </div>
+                    <div class="form-message form-message--error">
+                        Source and Destination should not be same city!
+                    </div>
                     <div class="form-btns" style="margin-top: 2rem;">
                         <button class="btn w-100" type="submit">Submit</button>
                     </div>
@@ -72,15 +80,27 @@
     <script>
         const form = document.querySelector('form');
         const dateInput = form.querySelector('#date');
+        const sourceCity = form.querySelector('#source');
+        const destinationCity = form.querySelector('#destination');
         const submitBtn = form.querySelector('.btn[type="submit"]');
+        const formMsg = form.querySelector('.form-message');
         submitBtn.classList.add('disabled');
+        const date = new Date();
+        const month = date.getMonth() + 1;
+        const minDate = date.getFullYear() + '-' + (month > 9 ? month : ('0' + month)) + '-' + (date.getDate() + 1);
+        dateInput.setAttribute('min', minDate);
 
-        dateInput.addEventListener('change', () => {
-            if(dateInput.value) {
-                submitBtn.classList.remove('disabled');
-            } else {
-                submitBtn.classList.add('disabled');
-            }
+        form.addEventListener('change', () => {
+          if(sourceCity.value === destinationCity.value || !dateInput.value) {
+            submitBtn.classList.add('disabled');
+          } else {
+            submitBtn.classList.remove('disabled');
+          }
+          if(sourceCity.value === destinationCity.value) {
+            formMsg.classList.add('active');
+          } else {
+            formMsg.classList.remove('active');
+          }
         });
 
 
