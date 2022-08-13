@@ -8,8 +8,6 @@ import java.util.ArrayList;
 public class UserList {
     String tableName = new TableName().user;
 
-    StaticTexts sts = new StaticTexts();
-
     public ArrayList<User> getUserByUsername(String username) {
         ArrayList<User> data = new ArrayList();
         try {

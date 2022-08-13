@@ -1,5 +1,6 @@
 package com.example.flyaway;
 
+import com.example.flyaway.classes.BookFlight;
 import com.example.flyaway.classes.StaticTexts;
 import com.example.flyaway.classes.User;
 import com.example.flyaway.classes.UserList;
@@ -25,6 +26,7 @@ public class BookFlightServlet extends HttpServlet {
         String address = (String) request.getParameter("address");
         String country = (String) request.getParameter("country");
         String flightId = (String) request.getParameter("flightId");
+        String flightDate = (String) request.getParameter("flightDate");
         String passengers = (String) request.getParameter("passengers");
         String amount = (String) request.getParameter("amount");
 
@@ -39,7 +41,17 @@ public class BookFlightServlet extends HttpServlet {
             userItm = new UserList().getUserByUsername(user.getUsername());
             user.setId(userItm.get(0).getId());
         }
-        request.getSession().setAttribute(sts.pageSuccess, "User Created Successfully");
+
+        BookFlight bk = new BookFlight();
+        bk.setFlightId(Integer.parseInt(flightId));
+        bk.setUserId(user.getId());
+        bk.setFlightDate(flightDate);
+        bk.setPassengers(passengers);
+        bk.setAmount(amount);
+
+        bk.createBookingFlight();
+
+        request.getSession().setAttribute(sts.pageSuccess, "Booked the Flight Successfully");
         response.sendRedirect("/");
 
     }

@@ -10,23 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cc9cc8e-7d92-4cce-bbfd-7b41972088fd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/BookFlightServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/BookFlight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/UserList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/booked-flights.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/invoice.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flyaway/SearchFlightServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/SearchFlightServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/FlightList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/FlightList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flyaway/BookFlightServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/BookFlightServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flyaway/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/IndexServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/BookFlight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/BookFlight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/StaticTexts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/StaticTexts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/scripts/init-main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/scripts/init-main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/UserList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/UserList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/booked-flights.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/booked-flights.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/change-password.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/change-password.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/parts/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/parts/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/search-flight-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/search-flight-list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/search-flights.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/search-flights.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/invoice.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/invoice.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/parts/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/parts/header.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +246,7 @@
       <workItem from="1660070853313" duration="9509000" />
       <workItem from="1660145690048" duration="2818000" />
       <workItem from="1660219045050" duration="16072000" />
-      <workItem from="1660262236484" duration="50719000" />
+      <workItem from="1660262236484" duration="56294000" />
     </task>
     <servers />
   </component>
@@ -269,5 +263,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/BookFlight.java</url>
+          <line>122</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

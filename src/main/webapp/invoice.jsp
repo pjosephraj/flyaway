@@ -135,13 +135,17 @@
                     <label for="arrival">Arrival</label>
                     <input type="text" id="arrival" name="arrival" value="<%= flightDate + ":" + fl.getArrival() %>">
                 </div>
+                <div class="form-control d-none">
+                    <label for="flightDate">Flight Date</label>
+                    <input type="text" id="flightDate" name="flightDate" value="<%= flightDate %>">
+                </div>
                 <div class="form-control">
                     <label for="passengers">Passengers</label>
                     <input type="text" id="passengers" name="passengers" value="<%= passengers %>">
                 </div>
-                <div class="form-control">
+                <div class="form-control d-none">
                     <label for="amount">Total Amount</label>
-                    <input type="text" id="amount" name="amount" value="₹<%= totalAmount %>">
+                    <input type="text" id="amount" name="amount" value="<%= totalAmount %>">
                 </div>
                 <div class="form-btns w-100">
                     <button class="btn w-100" type="submit">Pay ₹<%= totalAmount %></button>

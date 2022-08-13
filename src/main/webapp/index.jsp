@@ -1,4 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%
+    StaticTexts sts = new StaticTexts();
+    session.removeAttribute(sts.username);
+%>
 <!DOCTYPE html>
 <html lang="en">
 

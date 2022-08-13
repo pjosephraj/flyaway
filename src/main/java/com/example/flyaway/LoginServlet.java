@@ -32,6 +32,6 @@ public class LoginServlet extends HttpServlet {
             request.getSession().setAttribute(sts.pageError, e);
         }
 //        request.getRequestDispatcher("change-password.jsp").forward(request, response);
-        response.sendRedirect(sts.jspFlightList);
+        response.sendRedirect(sts.jspBookedFlights);
     }
 }

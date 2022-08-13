@@ -24,13 +24,13 @@ public class IndexServlet extends HttpServlet {
         try {
             Connection conn = new DbConnection().connect();
 
-//          User Table
-            UserTable ut = new UserTable();
-            ut.createTable(conn, userTableName);
-
-//          Flights Details Table
-            FlightDetailsTable fdt = new FlightDetailsTable();
-            fdt.createTable(conn, flightTableName);
+////          User Table
+//            UserTable ut = new UserTable();
+//            ut.createTable(conn, userTableName);
+//
+////          Flights Details Table
+//            FlightDetailsTable fdt = new FlightDetailsTable();
+//            fdt.createTable(conn, flightTableName);
 
 //          Booking Table
             BookingTable bt = new BookingTable();

@@ -12,6 +12,7 @@ public class StaticTexts {
     public String jspChangePassword = "change-password.jsp";
     public String jspFlightList = "flight-list.jsp";
     public String jspSearchFlights = "search-flights.jsp";
+    public String jspBookedFlights = "booked-flights.jsp";
 
 //    Booking keyNames
     public String flightId = "flightId";

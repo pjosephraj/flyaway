@@ -1,6 +1,5 @@
-<%@ page import="com.example.flyaway.classes.Flight" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.example.flyaway.classes.FlightList" %><%--
+<%@ page import="com.example.flyaway.classes.*" %><%--
   Created by IntelliJ IDEA.
   User: joseph
   Date: 8/13/2022
@@ -11,13 +10,13 @@
 <%
     StaticTexts sts = new StaticTexts();
     String username = (String) session.getAttribute(sts.username);
-    ArrayList<Flight> flData = new ArrayList<>();
+    ArrayList<BookFlight> flData = new ArrayList<>();
     if( username == null) {
         request.getSession().setAttribute("pageError", "Please login as Admin to access Booked Flights");
         response.sendRedirect( sts.jspLogin + "?errmsg=fl");
     } else {
-        FlightList fl = new FlightList();
-        flData = fl.getFlights(username);
+        BookFlight fl = new BookFlight();
+        flData = fl.getAll();
     }
 %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -29,7 +28,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>FlyAway | Booked Flight List</title>
+    <title>FlyAway | Booked Flights List</title>
 </head>
 <body>
 <%@include file="parts/header.jsp"%>
@@ -37,7 +36,7 @@
     <main class="box-wrapper">
         <div class="box-container w-100" style="max-width: initial;">
             <div class="box-title">
-                Flights List
+                Booked Flights List
             </div>
             <div class="box-body">
                 <p>Total Flights: <%= flData.size() %></p>
@@ -57,7 +56,7 @@
                     </thead>
                     <tbody>
                     <% if (flData.size() > 0) { %>
-                    <% for (Flight flight : flData) { %>
+                    <% for (BookFlight flight : flData) { %>
                     <tr>
                         <td>
                             <%= flight.getAirlineName() %>
@@ -66,19 +65,19 @@
                             <%= flight.getFlightNo() %>
                         </td>
                         <td>
-                            <%= flight.getSourceCity() %>
+                            <%= flight.getSource() %>
                         </td>
                         <td>
-                            <%= flight.getDestinationCity() %>
+                            <%= flight.getDestination() %>
                         </td>
                         <td>
                             <%= flight.getDeparture() %>
                         </td>
                         <td>
-                            <%= flight.getArrival() %>
+                            <%= flight.getPassengers() + " (" + flight.getUsername() + ")" %>
                         </td>
                         <td>
-                            ₹ <%= flight.getPrice() %>
+                            ₹ <%= flight.getAmount() %>
                         </td>
                     </tr>
                     <% }%> <!-- End For-->

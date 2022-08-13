@@ -28,7 +28,7 @@
     <main class="box-wrapper">
         <div class="box-container">
             <div class="box-title">
-                Change Password <%= username %>
+                Change Password
             </div>
             <form action="#">
                 <div class="form-control">
