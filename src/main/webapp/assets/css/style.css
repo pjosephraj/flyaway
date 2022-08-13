@@ -137,6 +137,11 @@ header {
     transition: .3s ease-in-out;
 }
 
+.alert-box.success {
+    border-color: #00ff004a;
+    color: green;
+}
+
 .alert-box.active {
     opacity: 1;
     transform: translateX(-50%) translateY(6rem);
@@ -277,6 +282,10 @@ nav .btn {
 
 .ta-c {
     text-align: center !important;
+}
+
+.d-none {
+    display: none !important;
 }
 
 .d-flex {

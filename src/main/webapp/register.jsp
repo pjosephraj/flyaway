@@ -1,4 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%
+    StaticTexts sts = new StaticTexts();
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlyAway Booking</title>
+    <title>FlyAway | Register</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
@@ -40,7 +44,7 @@
             <div class="box-title">
                 Register
             </div>
-            <form action="#">
+            <form action="invoice.jsp" method="post">
                 <div class="form-control">
                     <label class="required" for="fullname">Fullname</label>
                     <input type="text" id="fullname" name="fullname" placeholder="Enter Fullname" required>
@@ -48,15 +52,6 @@
                 <div class="form-control">
                     <label class="required" for="username">Email</label>
                     <input type="email" id="username" name="username" placeholder="Enter Email" required>
-                </div>
-                <div class="form-control">
-                    <label class="required" for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter Password" required>
-                </div>
-                <div class="form-control">
-                    <label class="required" for="repeat-password">Email</label>
-                    <input type="password" id="repeat-password" name="repeatPassword"
-                           placeholder="Enter Repeat Password" required>
                 </div>
                 <div class="form-control">
                     <label class="required" for="age">Age</label>
@@ -70,16 +65,16 @@
                 <div class="form-control">
                     <label class="required" for="identity-type">Identity Type</label>
                     <select name="identityType" id="identity-type">
-                        <option value="aadhaar">Aadhaar</option>
-                        <option value="ssn">SSN</option>
-                        <option value="passport">Passport</option>
-                        <option value="voterid">Voter Id</option>
-                        <option value="driverlicence">Driving License</option>
+                        <option value="Aadhaar">Aadhaar</option>
+                        <option value="SSN">SSN</option>
+                        <option value="Passport">Passport</option>
+                        <option value="Voter Id">Voter Id</option>
+                        <option value="Driving License">Driving License</option>
                     </select>
                 </div>
                 <div class="form-control">
                     <label class="required" for="identity-value">Identity Detail</label>
-                    <input type="text" id="identity-value" name="identityValue" placeholder="Enter Identity Detail"
+                    <input type="text" id="identity-value" name="identityValue" placeholder="Enter Aadhaar Detail"
                            maxlength="10" required>
                 </div>
                 <div class="form-control w-100">
@@ -100,6 +95,11 @@
                 <div class="form-message form-message--error">
                     Password & Repeat Password not matches!
                 </div>
+                <div class="d-none">
+                    <input type="text" name="<%= sts.flightId %>" value="<%= request.getParameter(sts.flightId) %>">
+                    <input type="text" name="<%= sts.flightDate %>" value="<%= request.getParameter(sts.flightDate) %>">
+                    <input type="text" name="<%= sts.passengers %>" value="<%= request.getParameter(sts.passengers) %>">
+                </div>
                 <div class="form-btns w-100">
                     <button class="btn w-100" type="submit">Submit</button>
                 </div>
@@ -110,22 +110,28 @@
 <%@ include file="parts/footer.jsp" %>
 <script>
   const form = document.querySelector('form');
+  const identityType = form.querySelector('#identity-type');
+  const identityValue = form.querySelector('#identity-value');
   const submitBtn = form.querySelector('button');
   const formMsg = form.querySelector('.form-message');
   submitBtn.classList.add('disabled');
+  form.elements.fullname.value = "Joseph Pushpa Raj";
+  form.elements.username.value = "user1@g.com";
+  form.elements.age.value = "33";
+  form.elements.mobile.value = "0987654321";
+  form.elements.identityValue.value = "ADH456787654";
+  form.elements.address.value = "Bengaluru";
+
   form.addEventListener('change', () => {
-    const password = form.elements.password.value;
-    const repeatPassword = form.elements.repeatPassword.value;
-    if (form.checkValidity() && (password === repeatPassword)) {
+    if(form.checkValidity()) {
       submitBtn.classList.remove('disabled');
     } else {
       submitBtn.classList.add('disabled');
     }
-    if (password && repeatPassword && (password !== repeatPassword)) {
-      formMsg.classList.add('active');
-    } else {
-      formMsg.classList.remove('active');
-    }
+  });
+  identityType.addEventListener('change', () => {
+    identityValue.setAttribute('placeholder', 'Enter '+ identityType.value +' Detail');
+    identityValue.value = "";
   });
 </script>
 </body>

@@ -1,22 +1,27 @@
-<%@ page import="java.util.ArrayList" %>
 <%@ page import="com.example.flyaway.classes.Flight" %>
-<%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.example.flyaway.classes.FlightList" %><%--
   Created by IntelliJ IDEA.
   User: joseph
-  Date: 8/12/2022
-  Time: 10:47 PM
+  Date: 8/13/2022
+  Time: 1:18 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     StaticTexts sts = new StaticTexts();
-    ArrayList<Flight> flData = (ArrayList<Flight>) request.getAttribute("flData");
-    String flightDate = (String) request.getAttribute("flightDate");
-    String sourceCity = (String) request.getAttribute("sourceCity");
-    String destinationCity = (String) request.getAttribute("destinationCity");
-    String passengers = (String) request.getAttribute("passengers");
-    Integer flDataSize = flData.size();
+    String username = (String) session.getAttribute(sts.username);
+    ArrayList<Flight> flData = new ArrayList<>();
+    if( username == null) {
+        request.getSession().setAttribute("pageError", "Please login as Admin to access Booked Flights");
+        response.sendRedirect( sts.jspLogin + "?errmsg=fl");
+    } else {
+        FlightList fl = new FlightList();
+        flData = fl.getFlights(username);
+    }
 %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -24,21 +29,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>FlyAway | Search Flight List</title>
+    <title>FlyAway | Booked Flight List</title>
 </head>
 <body>
-<%@include file="parts/header.jsp" %>
+<%@include file="parts/header.jsp"%>
 <div class="container">
     <main class="box-wrapper">
         <div class="box-container w-100" style="max-width: initial;">
             <div class="box-title">
-                Flights | Search Results
+                Flights List
             </div>
             <div class="box-body">
-                <p class="d-flex jc-between">
-                    <span><b><%= flDataSize %></b> Flight<%=(flDataSize > 1 ? "s" : "")%> available From <b><%= sourceCity %></b> to <b><%= destinationCity %></b> on <b><%= flightDate %></b></span>
-                    <span>No. of passengers: <b><%= passengers %></b></span>
-                </p>
+                <p>Total Flights: <%= flData.size() %></p>
             </div>
             <div class="box-table">
                 <table>
@@ -49,13 +51,12 @@
                         <th>Source</th>
                         <th>Destination</th>
                         <th>Departure</th>
-                        <th>Arrival</th>
-                        <th>Price</th>
-                        <th>Action</th>
+                        <th>Passengers</th>
+                        <th>Amount</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <% if (flDataSize > 0) { %>
+                    <% if (flData.size() > 0) { %>
                     <% for (Flight flight : flData) { %>
                     <tr>
                         <td>
@@ -79,9 +80,6 @@
                         <td>
                             ₹ <%= flight.getPrice() %>
                         </td>
-                        <td>
-                            <div class="btn btn-sm" onclick="bookFlight(<%= flight.getId() %>)">Book</div>
-                        </td>
                     </tr>
                     <% }%> <!-- End For-->
                     <% } else {%>
@@ -96,27 +94,5 @@
     </main>
 </div>
 <%@ include file="parts/footer.jsp" %>
-<script>
-  const form = document.createElement('form');
-  const flightIdInput = document.createElement('input');
-  const flightDateInput = document.createElement('input');
-  const passengersInput = document.createElement('input');
-  form.action = "/register.jsp";
-  form.method = 'post';
-  form.hidden = true;
-  flightDateInput.value = "<%= flightDate %>";
-  flightDateInput.name = "<%= sts.flightDate %>";
-  passengersInput.value = <%= passengers %>;
-  passengersInput.name = "<%= sts.passengers %>";
-  flightIdInput.name = "<%= sts.flightId %>";
-  form.appendChild(flightIdInput);
-  form.appendChild(flightDateInput);
-  form.appendChild(passengersInput);
-  document.body.appendChild(form);
-  const bookFlight = (flightId) => {
-    flightIdInput.value = flightId;
-    form.submit();
-  }
-</script>
 </body>
 </html>

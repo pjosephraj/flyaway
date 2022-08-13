@@ -8,8 +8,12 @@
 <%
     StaticTexts fSts = new StaticTexts();
     String pageError = (String) session.getAttribute(fSts.pageError);
+    String pageSuccess = (String) session.getAttribute(fSts.pageSuccess);
 %>
 <script>
   const pageError = "<%= pageError %>";
+  const pageSuccess = "<%= pageSuccess %>";
+  <% session.removeAttribute(fSts.pageError); %>
+  <% session.removeAttribute(fSts.pageSuccess); %>
 </script>
 <script src="assets/scripts/init-main.js"></script>

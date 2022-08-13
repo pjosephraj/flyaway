@@ -3,7 +3,6 @@
 <%
     StaticTexts sts = new StaticTexts();
     String username = (String) session.getAttribute(sts.username);
-    String pageError = (String) session.getAttribute(sts.pageError);
     session.setAttribute(sts.username, username);
     if (username == null) {
         response.sendRedirect( sts.jspLogin + "?errmsg=cp");
@@ -30,8 +29,6 @@
         <div class="box-container">
             <div class="box-title">
                 Change Password <%= username %>
-            </div>
-            <div><%= pageError %>
             </div>
             <form action="#">
                 <div class="form-control">

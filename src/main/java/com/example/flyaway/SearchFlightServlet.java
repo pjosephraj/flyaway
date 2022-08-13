@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-@WebServlet(name = "SearchFlightServlet", value = "/SearchFlightServlet")
+@WebServlet(name = "SearchFlightServlet", value = "/search-flight")
 public class SearchFlightServlet extends HttpServlet {
 
 

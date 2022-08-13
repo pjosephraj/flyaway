@@ -28,7 +28,7 @@
             <div class="box-title">
                 Search Flights
             </div>
-            <form action="SearchFlightServlet" method="post">
+            <form action="search-flight" method="post">
                 <div class="form-control">
                     <label class="required" for="date">Date</label>
                     <input type="date" name="flightDate" id="date" placeholder="Select Date" name="date">
