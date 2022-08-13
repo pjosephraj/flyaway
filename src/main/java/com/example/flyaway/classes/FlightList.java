@@ -68,6 +68,7 @@ public class FlightList {
                 flight.id = rs.getInt("id");
                 data.add(flight);
             }
+            conn.close();
             return data;
         } catch (Exception e) {
             System.out.println(e);

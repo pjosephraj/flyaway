@@ -142,6 +142,20 @@ header {
     transform: translateX(-50%) translateY(6rem);
 }
 
+/* Navbar */
+nav.nav-bar {
+    position: fixed;
+    z-index: 10;
+    background: #fff;
+    padding: .6rem 1.2rem;
+    top: 4.2rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 6px;
+    width: auto;
+    max-width: 90%;
+}
+
 
 /* Login */
 .box-wrapper {
@@ -244,6 +258,8 @@ header {
     transform: scale(1.15);
 }
 
+
+
 /* Utils */
 .w-100 {
     width: 100% !important;
@@ -251,4 +267,12 @@ header {
 
 .ta-c {
     text-align: center !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.jc-between {
+    justify-content: space-between !important;
 }

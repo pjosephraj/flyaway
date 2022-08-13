@@ -23,16 +23,11 @@ public class SearchFlightServlet extends HttpServlet {
         String destinationCity = request.getParameter("destinationCity");
         String passengers = request.getParameter("passengers");
         ArrayList<Flight> fl = new FlightList().getSearchFlights(sourceCity, destinationCity);
-        PrintWriter out = response.getWriter();
-        for(Flight itm: fl) {
-            out.println("AirlineName: " + itm.getAirlineName());
-            out.println("Flight No.: " + itm.getFlightNo());
-            out.println("Price: " + itm.getPrice());
-            out.println("Source City: " + itm.getSourceCity());
-            out.println("Destination City: " + itm.getDestinationCity());
-            out.println("Departure: " + itm.getDeparture());
-            out.println("Arrival: " + itm.getArrival());
-        }
-        out.close();
+        request.setAttribute("flData", fl);
+        request.setAttribute("flightDate", flightDate);
+        request.setAttribute("sourceCity", sourceCity);
+        request.setAttribute("destinationCity", destinationCity);
+        request.setAttribute("passengers", passengers);
+        request.getRequestDispatcher("search-flight-list.jsp").forward(request, response);
     }
 }

@@ -52,7 +52,6 @@
                         <th>Departure</th>
                         <th>Arrival</th>
                         <th>Price</th>
-                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -79,9 +78,6 @@
                         </td>
                         <td>
                             ₹ <%= flight.getPrice() %>
-                        </td>
-                        <td>
-                            <div class="btn btn-sm">Book</div>
                         </td>
                     </tr>
                     <% }%> <!-- End For-->
