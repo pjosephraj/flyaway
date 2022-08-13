@@ -154,6 +154,7 @@ nav.nav-bar {
     border-radius: 6px;
     width: auto;
     max-width: 90%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 
@@ -245,6 +246,11 @@ nav.nav-bar {
     border-radius: 4px;
 }
 
+.btn a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .btn.disabled {
     opacity: .5;
     pointer-events: none;
@@ -256,6 +262,10 @@ nav.nav-bar {
 
 .btn-sm:hover {
     transform: scale(1.15);
+}
+
+nav .btn {
+    margin: 0.5rem;
 }
 
 

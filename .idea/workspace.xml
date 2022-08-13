@@ -10,13 +10,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cc9cc8e-7d92-4cce-bbfd-7b41972088fd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/LogoutServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/parts/footer.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flyaway/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flyaway/SearchFlightServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/SearchFlightServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/AdminUsername.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/StaticTexts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/FlightList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/FlightList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/scripts/init-main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/scripts/init-main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/change-password.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/change-password.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/flight-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/flight-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/parts/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/parts/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/search-flight-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/search-flight-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/search-flights.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/search-flights.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/search-results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/search-results.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,8 +110,8 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.65">
-    <configuration name="FlightList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.flyaway.classes.FlightList" />
+    <configuration name="PasswordHash" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.flyaway.classes.PasswordHash" />
       <module name="flyaway" />
       <extension name="coverage">
         <pattern>
@@ -113,8 +123,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.example.flyaway.classes.PasswordHash" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.flyaway.classes.PasswordHash" />
+    <configuration name="com.example.flyaway.classes.FlightList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.flyaway.classes.FlightList" />
       <module name="flyaway" />
       <extension name="coverage">
         <pattern>
@@ -224,7 +234,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FlightList" />
+        <item itemvalue="Application.com.example.flyaway.classes.FlightList" />
         <item itemvalue="Application.com.example.flyaway.classes.PasswordHash" />
       </list>
     </recent_temporary>
@@ -242,7 +252,7 @@
       <workItem from="1660070853313" duration="9509000" />
       <workItem from="1660145690048" duration="2818000" />
       <workItem from="1660219045050" duration="16072000" />
-      <workItem from="1660262236484" duration="23657000" />
+      <workItem from="1660262236484" duration="32068000" />
     </task>
     <servers />
   </component>

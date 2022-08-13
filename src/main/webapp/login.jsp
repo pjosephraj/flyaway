@@ -38,7 +38,7 @@
         </div>
     </main>
 </div>
-<script src="assets/scripts/init-main.js"></script>
+<%@ include file="parts/footer.jsp" %>
 <script>
   const form = document.querySelector('form');
   const loginBtn = form.querySelector('.btn[type="submit"]');

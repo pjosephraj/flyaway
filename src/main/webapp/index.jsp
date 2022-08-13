@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<%@include file="parts/header.jsp"%>
+<%@ include file="parts/header.jsp"%>
 <div class="container">
     <main class="jumbo-wrapper">
         <div class="jumbo-container">
@@ -25,7 +25,7 @@
         </div>
     </main>
 </div>
-<script src="assets/scripts/init-main.js"></script>
+<%@ include file="parts/footer.jsp" %>
 </body>
 
 </html>

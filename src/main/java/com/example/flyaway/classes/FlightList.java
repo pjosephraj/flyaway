@@ -8,10 +8,10 @@ import java.util.ArrayList;
 
 public class FlightList {
     String tableName = new TableName().flight;
-    String adminUsername = new AdminUsername().value;
+    String adminUsername = new StaticTexts().adminUsername;
     public ArrayList<Flight> getFlights(String username) {
         ArrayList<Flight> data = new ArrayList();
-        if(username == adminUsername) {
+        if(username.equalsIgnoreCase(adminUsername)) {
             try {
                 Connection conn = new DbConnection().connect();
                 Statement stmt = conn.createStatement();

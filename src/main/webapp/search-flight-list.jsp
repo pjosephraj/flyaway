@@ -93,6 +93,6 @@
         </div>
     </main>
 </div>
-<script src="assets/scripts/init-main.js"></script>
+<%@ include file="parts/footer.jsp" %>
 </body>
 </html>

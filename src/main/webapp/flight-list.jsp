@@ -9,18 +9,19 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%
-    String username = (String) request.getAttribute("username");
-
+    StaticTexts sts = new StaticTexts();
+    String username = (String) session.getAttribute(sts.username);
+    ArrayList<Flight> flData = new ArrayList<>();
     if( username == null) {
-        response.sendRedirect("login.jsp?errmsg=fl");
-     }
+        request.getSession().setAttribute("pageError", "Please login as Admin to access Flight List");
+        response.sendRedirect( sts.jspLogin + "?errmsg=fl");
+     } else {
+        FlightList fl = new FlightList();
+        flData = fl.getFlights(username);
+    }
 %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<%
-    FlightList fl = new FlightList();
-    ArrayList<Flight> flData = fl.getFlights("admin@flyaway.com");
-%>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -92,6 +93,6 @@
         </div>
     </main>
 </div>
-<script src="assets/scripts/init-main.js"></script>
+<%@ include file="parts/footer.jsp" %>
 </body>
 </html>

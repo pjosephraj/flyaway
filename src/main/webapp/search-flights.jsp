@@ -2,12 +2,12 @@
 <%@ page import="com.example.flyaway.classes.SearchFlights" %>
 <%@ page import="com.example.flyaway.classes.FlightList" %>
 <%@ page import="com.example.flyaway.classes.Flight" %>
-<%@ page import="com.example.flyaway.classes.AdminUsername" %>
+<%@ page import="com.example.flyaway.classes.StaticTexts" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <%
-    ArrayList<Flight> fldata = new FlightList().getFlights(new AdminUsername().value);
+    ArrayList<Flight> fldata = new FlightList().getFlights(new StaticTexts().adminUsername);
     ArrayList<String> sourceCities = new SearchFlights().getSourceCities(fldata);
     ArrayList<String> destinationCities = new SearchFlights().getDestinationCities(fldata);
 %>
@@ -73,7 +73,7 @@
     </main>
 </div>
 
-<script src="assets/scripts/init-main.js"></script>
+<%@ include file="parts/footer.jsp" %>
 <script>
   const form = document.querySelector('form');
   const dateInput = form.querySelector('#date');

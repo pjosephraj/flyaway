@@ -1,11 +1,14 @@
+<%@ page import="com.example.flyaway.classes.StaticTexts" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
-    String username = (String) request.getAttribute("username");
-
-    if(username == null) {
-        response.sendRedirect("login.jsp?errmsg=cp");
-    }else if (!username.equalsIgnoreCase("admin@flyaway.com")) {
-        response.sendRedirect("search-flights.jsp");
+    StaticTexts sts = new StaticTexts();
+    String username = (String) session.getAttribute(sts.username);
+    String pageError = (String) session.getAttribute(sts.pageError);
+    session.setAttribute(sts.username, username);
+    if (username == null) {
+        response.sendRedirect( sts.jspLogin + "?errmsg=cp");
+    } else if (!username.equalsIgnoreCase(sts.adminUsername)) {
+        response.sendRedirect(sts.jspSearchFlights);
     }
 %>
 <!DOCTYPE html>
@@ -21,12 +24,14 @@
 </head>
 
 <body>
-<%@include file="parts/header.jsp"%>
+<%@include file="parts/header.jsp" %>
 <div class="container">
     <main class="box-wrapper">
         <div class="box-container">
             <div class="box-title">
                 Change Password <%= username %>
+            </div>
+            <div><%= pageError %>
             </div>
             <form action="#">
                 <div class="form-control">
@@ -47,7 +52,7 @@
         </div>
     </main>
 </div>
-<script src="assets/scripts/init-main.js"></script>
+<%@ include file="parts/footer.jsp" %>
 <script>
   const form = document.querySelector('form');
   const submitBtn = form.querySelector('.btn[type="submit"]');
