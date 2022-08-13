@@ -20,10 +20,10 @@
 %>
 <nav class="nav-bar">
     <button class="btn btn-sm">
-        <a href="<%= hSts.jspFlightList %>">Flight List</a>
+        <a href="<%= hSts.jspBookedFlights %>">Booked Flights</a>
     </button>
     <button class="btn btn-sm">
-        <a href="<%= hSts.jspBookedFlights %>">Booked Flights</a>
+        <a href="<%= hSts.jspFlightList %>">Flight List</a>
     </button>
     <button class="btn btn-sm">
         <a href="<%= hSts.jspChangePassword %>">Change Password</a>

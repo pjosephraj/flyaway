@@ -12,9 +12,9 @@
     StaticTexts sts = new StaticTexts();
     String username = (String) session.getAttribute(sts.username);
     ArrayList<Flight> flData = new ArrayList<>();
-    if( username == null) {
-        request.getSession().setAttribute("pageError", "Please login as Admin to access Flight List");
-        response.sendRedirect( sts.jspLogin + "?errmsg=fl");
+    if( username == null || !username.equalsIgnoreCase(sts.adminUsername)) {
+        request.getSession().setAttribute(sts.pageError, "Please login as Admin to access Flight List");
+        response.sendRedirect( sts.jspLogin);
      } else {
         FlightList fl = new FlightList();
         flData = fl.getFlights(username);
@@ -24,11 +24,7 @@
 
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <%@include file="parts/head.jsp"%>
     <title>FlyAway | Flight List</title>
 </head>
 <body>

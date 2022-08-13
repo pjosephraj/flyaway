@@ -21,8 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (paramsObj[errMsgKey] === 'cp') {
       errorMsg = 'Please login to change the password!';
     } else {
-      errorMsg = pageError == null ? 'Page is restricted to logged In user only!' : pageError;
+      errorMsg = pageError === 'null' ? 'Page is restricted to logged In user only!' : pageError;
     }
+  }
+  console.log('pageError', pageError);
+  if(pageError !== 'null') {
+    errorMsg = pageError;
   }
   if (errorMsg) {
     alertMsg.innerHTML = errorMsg;
@@ -45,4 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3000);
   }
 
+});
+
+window.addEventListener("unload", async () => {
+  await fetch("remove-attributes");
 });

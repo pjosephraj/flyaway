@@ -9,18 +9,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cc9cc8e-7d92-4cce-bbfd-7b41972088fd" name="Changes" comment="">
+    <list default="true" id="7cc9cc8e-7d92-4cce-bbfd-7b41972088fd" name="Changes" comment="...">
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/RemoveAttributesServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/parts/head.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flyaway/BookFlightServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/BookFlightServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flyaway/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/IndexServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/BookFlight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/BookFlight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/StaticTexts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/StaticTexts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/UserList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/UserList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/scripts/init-main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/scripts/init-main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/booked-flights.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/booked-flights.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/change-password.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/change-password.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/flight-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/flight-list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/invoice.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/invoice.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/parts/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/parts/footer.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/parts/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/parts/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/search-flight-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/search-flight-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/search-flights.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/search-flights.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/search-results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/search-results.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +38,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -94,11 +101,12 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.3954023",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "settings.editor.selected.configurable": "debugger.dataViews"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\learning\PG-FSD-Phase2\phase-2_project\flyaway\src\main\webapp\assets\images" />
       <recent name="C:\learning\PG-FSD-Phase2\phase-2_project\flyaway\src\main\java\com\example\flyaway" />
       <recent name="C:\learning\PG-FSD-Phase2\phase-2_project\flyaway\src\main" />
     </key>
@@ -246,8 +254,16 @@
       <workItem from="1660070853313" duration="9509000" />
       <workItem from="1660145690048" duration="2818000" />
       <workItem from="1660219045050" duration="16072000" />
-      <workItem from="1660262236484" duration="56294000" />
+      <workItem from="1660262236484" duration="62721000" />
     </task>
+    <task id="LOCAL-00001" summary="...">
+      <created>1660397241616</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1660397241616</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,15 +280,23 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/BookFlight.java</url>
-          <line>122</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
