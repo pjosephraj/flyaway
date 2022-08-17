@@ -111,12 +111,6 @@
   const submitBtn = form.querySelector('button');
   const formMsg = form.querySelector('.form-message');
   submitBtn.classList.add('disabled');
-  form.elements.fullname.value = "Joseph Pushpa Raj";
-  form.elements.username.value = "user1@g.com";
-  form.elements.age.value = "33";
-  form.elements.mobile.value = "0987654321";
-  form.elements.identityValue.value = "ADH456787654";
-  form.elements.address.value = "Bengaluru";
 
   form.addEventListener('change', () => {
     if(form.checkValidity()) {
