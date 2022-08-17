@@ -15,7 +15,6 @@ import java.util.Date;
 @WebServlet(name = "SearchFlightServlet", value = "/search-flight")
 public class SearchFlightServlet extends HttpServlet {
 
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String flightDate = request.getParameter("flightDate");

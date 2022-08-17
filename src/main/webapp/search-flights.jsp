@@ -95,8 +95,6 @@
       formMsg.classList.remove('active');
     }
   });
-
-
 </script>
 </body>
 

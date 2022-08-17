@@ -26,14 +26,17 @@
             <div class="box-title">
                 Change Password
             </div>
-            <form action="#">
+            <form action="change-password" method="post">
                 <div class="form-control">
                     <label class="required" for="new-password">New Password</label>
-                    <input type="password" id="new-password" placeholder="Enter New Password">
+                    <input type="password" id="new-password" name="password" placeholder="Enter New Password">
                 </div>
                 <div class="form-control">
                     <label class="required" for="repeat-password">Repeat Password</label>
                     <input type="password" id="repeat-password" placeholder="Enter Repeat Password">
+                </div>
+                <div class="form-control d-none">
+                    <input type="text" name="username" value="<%= username %>">
                 </div>
                 <div class="form-message form-message--error">
                     Password Mismatch!

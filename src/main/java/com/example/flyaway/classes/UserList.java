@@ -27,7 +27,42 @@ public class UserList {
         }
     }
 
-    public boolean insertUser(User user) {
+    public String getPassword(String username) {
+        StaticTexts sts = new StaticTexts();
+        String password = "";
+        try {
+            Connection conn = new DbConnection().connect();
+            Statement stmt = conn.createStatement();
+            String sql = "SELECT * FROM " + this.tableName +
+                    " WHERE username='"+ username +"'";
+            ResultSet rs = stmt.executeQuery(sql);
+            while(rs.next()) {
+                password = rs.getString(sts.password);
+            }
+            return password;
+        } catch (Exception e) {
+            System.out.println(e);
+            return password;
+        }
+    }
+
+    public Boolean changePassword(String username, String password) {
+        try {
+            Connection conn = new DbConnection().connect();
+            Statement stmt = conn.createStatement();
+            PasswordHash ph = new PasswordHash();
+            String hashedPassword = ph.hashPassword(password);
+            String sql = "UPDATE " + this.tableName +
+                    " SET password='"+ hashedPassword + "' WHERE username='"+ username +"'";
+            stmt.executeUpdate(sql);
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
+    }
+
+    public Boolean insertUser(User user) {
         try {
             Connection conn = new DbConnection().connect();
             Statement stmt = conn.createStatement();
@@ -48,7 +83,7 @@ public class UserList {
             Connection conn = new DbConnection().connect();
             Statement stmt = conn.createStatement();
             String sql = "UPDATE " + this.tableName +
-                    "SET username='"+ user.getUsername() +"', " +
+                    " SET username='"+ user.getUsername() +"', " +
                     "fullname='" + user.getFullname() + "', " +
                     "address='" + user.getAddress() + "', " +
                     "age='" + user.getAge() + "', " +

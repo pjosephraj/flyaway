@@ -3,7 +3,7 @@ package com.example.flyaway.classes;
 public class StaticTexts {
     public String adminUsername = "admin@flyaway.com";
     public String username = "username";
-    public String userId = "userId";
+    public String password = "password";
     public String pageError = "pageError";
     public String pageSuccess = "pageSuccess";
 

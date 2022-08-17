@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class DbConnection {
 
-    String jdbcURL = "jdbc:mysql://localhost:3306/jsp_demo_auth";
+    String jdbcURL = "jdbc:mysql://localhost:3306/flyaway";
     String username = "root";
     String password = "SS2022ll";
 
