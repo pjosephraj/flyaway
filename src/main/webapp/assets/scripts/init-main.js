@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
       errorMsg = pageError === 'null' ? 'Page is restricted to logged In user only!' : pageError;
     }
   }
-  console.log('pageError', pageError);
   if(pageError !== 'null') {
     errorMsg = pageError;
   }
@@ -39,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   if (pageSuccess !== 'null') {
-    console.log('pageSuccess', pageSuccess);
     alertMsg.innerHTML = pageSuccess;
     alertBox.appendChild(alertMsg);
     alertBox.classList.add('success');

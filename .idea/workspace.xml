@@ -10,12 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cc9cc8e-7d92-4cce-bbfd-7b41972088fd" name="Changes" comment="...">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/ChangePasswordServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flyaway/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/StaticTexts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/StaticTexts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/UserList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/UserList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/change-password.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/change-password.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/scripts/init-main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/scripts/init-main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +241,7 @@
       <workItem from="1660219045050" duration="16072000" />
       <workItem from="1660262236484" duration="64307000" />
       <workItem from="1660544261113" duration="606000" />
-      <workItem from="1660711892764" duration="5160000" />
+      <workItem from="1660711892764" duration="5920000" />
     </task>
     <task id="LOCAL-00001" summary="...">
       <created>1660397241616</created>
@@ -278,13 +273,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/flyaway/classes/UserList.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
